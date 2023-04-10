@@ -28,6 +28,7 @@ List<Faturamento> faturamentosSuperioresMedia = new List<Faturamento>();
 //Número de dias no mês em que o valor de faturamento diário foi superior à média mensal.
 List<Faturamento> diasFaturamentoSuperiorMedia = faturamentos.FindAll(x => x.Valor > mediaFaturamentoMensal);
 
+//como o arquivo json é estático, e sempre haverá dias com faturamento superior à média, não há necessidade de validar valor nulo.
 faturamentosSuperioresMedia.AddRange(diasFaturamentoSuperiorMedia);
 
 Console.WriteLine("Menor faturamento mensal - Dia: " + menorFaturamento.Dia + " Valor: " + menorFaturamento.Valor.ToString("F2"));
